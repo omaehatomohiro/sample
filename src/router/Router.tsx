@@ -1,7 +1,9 @@
 import React,{memo, VFC} from "react";
 import { Routes,Route } from "react-router-dom";
+
 import { Login } from "../components/pages/Login";
 import { Page404 } from "../components/pages/Page404";
+import { HeaderLayout } from "../templates/HeaderLayout";
 import { homeRoutes } from "./HomeRoutes";
 // import { Home } from "../components/pages/Home";
 // import { UserManagement } from "../components/pages/UserManagement";
@@ -19,7 +21,7 @@ export const Router: VFC = memo( () => {
                     <React.Fragment key={index}>
                         <Route
                             path={route.path}
-                            element={route.element}
+                            element={<HeaderLayout>{route.element}</HeaderLayout>}
                         />
                     </React.Fragment>
                     )
