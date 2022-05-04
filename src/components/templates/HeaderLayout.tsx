@@ -1,4 +1,4 @@
-import { memo, VFC, ReactNode} from "react";
+import { memo, FC, ReactNode} from "react";
 
 import { Header } from "../layout/Header";
 
@@ -6,7 +6,7 @@ type Props = {
     children: ReactNode;
 }
 
-export const HeaderLayout: VFC<Props> = memo( (props) => {
+export const HeaderLayout: FC<Props> = memo( (props) => {
     const {children} = props;
 
     return (

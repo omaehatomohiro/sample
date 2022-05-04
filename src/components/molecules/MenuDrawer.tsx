@@ -1,4 +1,4 @@
-import React, { memo, VFC } from "react";
+import React, { memo, FC } from "react";
 
 import { 
     Drawer,
@@ -16,7 +16,7 @@ type Props = {
     onClickSetting: () => void;
 }
 
-export const MenuDrawer: VFC<Props> = memo( (props) => {
+export const MenuDrawer: FC<Props> = memo( (props) => {
 
     const {
         isOpen, onClose,

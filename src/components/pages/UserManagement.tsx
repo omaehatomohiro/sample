@@ -5,20 +5,21 @@ import {
     Center,
     useDisclosure,
  } from "@chakra-ui/react";
-import React, {memo, useCallback, useEffect, VFC} from "react";
+import React, {memo, useCallback, useEffect, FC} from "react";
 
 import { UserCard } from "../organisms/user/UserCard";
 import { useAllUsers } from "../../hooks/useAllUsers";
 import { useSelectUser } from "../../hooks/useSelectUser";
 import { UserDetailModal } from "../organisms/user/UserDetailModal"; 
+import { useLoginUser } from "../../hooks/useLoginUser";
 
 
-export const UserManagement: VFC = memo( () => {
+export const UserManagement: FC = memo( () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { getUsers, loading, users } = useAllUsers();
     const { onSelectUser, selectedUser } = useSelectUser();
-
+    const { loginUser } = useLoginUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect( () => getUsers(), []);
 
@@ -48,7 +49,7 @@ export const UserManagement: VFC = memo( () => {
                 ))}
             </Wrap>  
             )}
-            <UserDetailModal user={selectedUser} isOpen={isOpen} onClose={onClose}/>
+            <UserDetailModal user={selectedUser} isOpen={isOpen} onClose={onClose} isAdmin={loginUser?.isAdmin}/>
         </React.Fragment>
     );
 })

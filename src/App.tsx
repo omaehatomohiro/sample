@@ -6,11 +6,14 @@ import {
 
 import theme from "./theme/theme";
 import {Router} from "./router/Router";
+import { LoginUserProvider } from "./providers/LoginUserProvider";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
     <BrowserRouter>
-      <Router/>
+      <LoginUserProvider>
+        <Router/>
+      </LoginUserProvider>
     </BrowserRouter>
   </ChakraProvider>
 )

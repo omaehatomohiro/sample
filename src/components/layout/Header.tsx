@@ -1,4 +1,4 @@
-import React, { memo, useCallback, VFC } from "react";
+import React, { memo, useCallback, FC } from "react";
 
 import { 
     Flex,
@@ -12,7 +12,7 @@ import { MenuIconButton } from "../atoms/button/MenuIconButton";
 import { MenuDrawer } from "../molecules/MenuDrawer";
 import { useNavigate } from "react-router-dom";
 
-export const Header: VFC = memo( () => {
+export const Header: FC = memo( () => {
     const {isOpen, onOpen, onClose} = useDisclosure();
     const navigate = useNavigate();
     

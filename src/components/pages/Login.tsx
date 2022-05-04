@@ -1,5 +1,5 @@
 
-import React, {ChangeEvent, memo, useState, VFC} from "react";
+import React, {ChangeEvent, memo, useState, FC} from "react";
 
 import {
     Flex,
@@ -12,7 +12,7 @@ import {
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { useAuth } from "../../hooks/useAuth";
 
-export const Login: VFC = memo( () => {
+export const Login: FC = memo( () => {
 
     const {login, loading} = useAuth();
 

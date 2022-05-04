@@ -1,5 +1,5 @@
 
-import React, {memo, VFC} from "react";
+import React, {memo, FC} from "react";
 
 import { Button } from "@chakra-ui/react";
 
@@ -10,7 +10,7 @@ type Props = {
     loading?: boolean;
 }
 
-export const PrimaryButton: VFC<Props> = memo( (props) => {
+export const PrimaryButton: FC<Props> = memo( (props) => {
     const {children, onClick, disabled = false, loading} = props;
     return (
             <React.Fragment>
