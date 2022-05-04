@@ -26,7 +26,6 @@ export const MenuDrawer: VFC<Props> = memo( (props) => {
     } = props;
  
     return (
-        <React.Fragment>
             <Drawer
                 placement="left"
                 size="xs"
@@ -35,10 +34,7 @@ export const MenuDrawer: VFC<Props> = memo( (props) => {
             >
                 <DrawerOverlay>
                     <DrawerContent>
-                        <DrawerBody
-                            // p={0}
-                            // bg="gray"
-                        >
+                        <DrawerBody>
                             <Button w="100%" onClick={onClickHome}>TOP</Button>
                             <Button w="100%" onClick={onClickUserManagement}>ユーザー一覧</Button>
                             <Button w="100%" onClick={onClickSetting}>設定</Button>
@@ -46,6 +42,5 @@ export const MenuDrawer: VFC<Props> = memo( (props) => {
                     </DrawerContent>
                 </DrawerOverlay>
             </Drawer>
-        </React.Fragment>
     )
 })
