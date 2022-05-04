@@ -1,0 +1,26 @@
+import React, { memo, VFC } from "react";
+
+import { IconButton,} from "@chakra-ui/react";
+import { HamburgerIcon } from '@chakra-ui/icons';
+
+type Props = {
+    onOpen: () => void;
+}
+
+export const MenuIconButton: VFC<Props> = memo( (props) => {
+
+    const {onOpen} = props;
+
+    return (
+        <React.Fragment>
+            <IconButton 
+                onClick={onOpen}
+                aria-label="メニュー"
+                icon={React.createElement(HamburgerIcon)} 
+                size="sm"
+                variant="unstyled"
+                display={{base: "block", md: "none"}}
+            />
+        </React.Fragment>
+    )
+})
